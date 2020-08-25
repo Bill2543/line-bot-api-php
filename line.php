@@ -38,13 +38,19 @@ if ( sizeof($request_array['events']) > 0 )
 
 		     $obj = json_decode($result);
 
-// 		     $reply_message = $result;
+		    //  $reply_message = $result;
         
          $reply_message = 'ติดเชื้อสะสม '. $obj->{'Confirmed'}.'คน'.' เบื่อ '.' รักษาหายแล้ว'. $obj->{'Recovered'}.'คน'; 
-		    }
+        }
+
+        //CDMA
+        if($text == "CDMA"){
+			
+          $reply_message = '+1-3-1-1';	
+        }
 	   	
 		
-// 		$reply_message = '('.$text.') ได้รับข้อความเรียบร้อย!!';   
+		// $reply_message = '('.$text.') ได้รับข้อความเรียบร้อย!!';   
    }
    else
     $reply_message = 'ระบบได้รับ '.ucfirst($event['message']['type']).' ของคุณแล้ว';
